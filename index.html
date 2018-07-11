@@ -10,74 +10,85 @@
 <body>
     <header>
         <h1>NASA</h1>
-        <ul>
-            <li>Journey to Mars</li>
-            <li>Exploration Content</li>
-            <li>Aeronautics</li>
-            <li>Mars Today</li>
-            <li>Solar System</li>
-        </ul>
     </header>
     <main>
-        <section>
-            <h2>Journey to Mars</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro tempora, quia debitis, eius sapiente error architecto itaque beatae voluptatem dolore eligendi ullam voluptatum facere voluptates delectus. Voluptatum accusamus exercitationem quia.</p>
-            <button>Learn More</button>
-        </section>
-        <section>
-            <h2>Exploration Content</h2>
-            <nav>
-                <ul>
-                    <li>missions</li>
-                    <li>galleries</li>
-                    <li>about</li>
-                    <li>technology</li>
-                </ul>
-            </nav>
+        <section class="slider">
             <div class="content">
+                <h2>Journey to Mars</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro tempora, quia debitis, eius sapiente error architecto.</p>
+                <a href="http://www.google.ca/">Learn More</a>
+                <div class="slide-counter">
+                        01
+                </div>
+            </div>
+        </section>
+        <section class="exploration-content">
+            <div class="content">
+                <h2>Exploration Content</h2>
                 <h3>Mission-1</h3>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus, cum! Impedit quia facilis quam deleniti ab non sunt nemo, ipsa voluptatibus? Ad sequi fuga libero corporis nostrum officiis perspiciatis eaque!</p>        
             </div>
+            <nav>
+                <ul>
+                    <li><a class="active" href="#">missions</a></li>
+                    <li><a href="#">galleries</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">technology</a></li>
+                </ul>
+            </nav>
             <aside>
-                <span>NASA</span>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-                <p>Lorem, ipsum dolor sit amet</p>
+                <div class="rectangle">
+                    <span>NASA</span>
+                </div>
+                <div class="text">
+                    <p>Lorem ipsum dolor sit amet consectetur</p>
+                    <p>Lorem, ipsum dolor sit amet</p>
+                </div>
             </aside>
         </section>
-        <section>
+        <section class="aeronautics">
             <div class="content">
-                <h2>Aeronautics</h2>
-                <hr>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, cumque ratione rerum minima repellat veniam adipisci ipsa officiis iusto harum saepe aut, explicabo ut aspernatur inventore quia. Nemo, ad dolores.</p>
-                <button>Learn More</button>
-                <img src="" alt="" srcset="">
+                <div class="text">
+                    <h2>Aeronautics</h2>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, cumque ratione rerum minima repellat veniam adipisci ipsa officiis iusto harum saepe aut, explicabo ut aspernatur inventore quia. Nemo, ad dolores.</p>
+                    <a href="#">Learn More</a>
+                </div>
             </div>
             <div class="image"></div>
         </section>
-        <section>
+        <section class="mars-today">
             <div class="content">
-                <h2>Mars Today</h2>
-                <hr>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia rerum beatae nobis in nam debitis voluptates ipsam dolores doloribus odit! Eos aliquam hic quos. Unde numquam minus quaerat aspernatur dolores.</p>
-                <q>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis autem aliquam praesentium alias obcaecati quos corporis consectetur, hic quasi totam doloremque voluptatibus et id cumque incidunt voluptatem enim, voluptatum tempora.</q>
-                <button>Learn More</button>
+                <div class="text">
+                    <h2>Mars Today</h2>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, cumque ratione rerum minima repellat veniam adipisci ipsa officiis iusto harum saepe aut, explicabo ut aspernatur inventore quia. Nemo, ad dolores.</p>
+                    <a href="#">Learn More</a>
+                </div>
             </div>
             <div class="image"></div>
         </section>
-        <section>
-            <h2>Solar System</h2>
-            <hr>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus exercitationem nisi rerum maiores ducimus quis placeat fugiat animi minima illum provident autem facere distinctio fugit atque, dolorem deserunt praesentium asperiores.</p>
-            <button>Learn More</button>
+        <section class="solar-system">
+            <div class="content">
+                <div class="text">
+                    <h2>Solar System</h2>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, cumque ratione rerum minima repellat veniam adipisci ipsa officiis iusto harum saepe aut, explicabo ut aspernatur inventore quia. Nemo, ad dolores.</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+            <div class="image"></div>
         </section>
     </main>
     <footer>
-        <ul>
-            <li>contact</li>
-            <li>privacy</li>
-            <li>office</li>
-            <li>reports</li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="#">contact</a></li>
+                <li><a href="#">privacy</a></li>
+                <li><a href="#">office</a></li>
+                <li><a href="#">reports</a></li>
+            </ul>
+        </nav>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/app.js"></script>
