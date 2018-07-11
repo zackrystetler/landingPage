@@ -180,11 +180,21 @@ ul {
 
 h1, h2 {
   font-family: 'Open Sans', sans-seriff;
-  font-weight: 100;
+  font-weight: 800;
+  font-size: 3em;
 }
 
 p {
   line-height: 1.4;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 16px;
+  }
+  h2 {
+    font-size: 2em;
+  }
 }
 
 header {
@@ -202,7 +212,8 @@ header h1 {
 
 .slider {
   width: 100%;
-  min-height: 90vh;
+  height: 80vh;
+  min-height: 600px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,7 +262,7 @@ header h1 {
       -ms-flex-align: end;
           align-items: flex-end;
   padding: 4em;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .slider .content h2 {
@@ -262,15 +273,17 @@ header h1 {
 
 .slider .content a {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .slider .content .slide-counter {
-  font-size: 5em;
+  opacity: .5;
+  font-size: 4em;
   font-family: 'Open Sans', sans-seriff;
   font-weight: 900;
-  position: relative;
-  margin: 2em .5em 0 0;
+  position: absolute;
+  bottom: .5em;
+  right: 1em;
 }
 
 .slider .content .slide-counter:after {
@@ -278,6 +291,12 @@ header h1 {
   font-size: .3em;
   position: absolute;
   top: .5em;
+}
+
+@media screen and (max-width: 500px) {
+  .slider .content h2 {
+    font-size: 3em;
+  }
 }
 
 .exploration-content {
@@ -323,13 +342,13 @@ header h1 {
 
 .exploration-content nav ul li a.active {
   color: black;
-  font-weight: bold;
+  font-weight: 700;
   position: relative;
 }
 
 .exploration-content nav ul li a.active:before {
   content: '';
-  width: 250px;
+  width: 100vw;
   height: 3px;
   background-color: black;
   position: absolute;
@@ -358,8 +377,6 @@ header h1 {
 }
 
 .exploration-content .content h2 {
-  font-size: 4em;
-  font-weight: normal;
   margin: .25em 0;
 }
 
@@ -427,6 +444,59 @@ header h1 {
   margin: 3em 0 0 0;
 }
 
+@media screen and (max-width: 850px) {
+  .exploration-content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
+  .exploration-content nav {
+    width: 100%;
+    height: 150px;
+    padding: 1em;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / span 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+    padding-right: 2em;
+  }
+  .exploration-content .content {
+    width: 100%;
+    padding: 3em;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / span 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+  }
+  .exploration-content aside {
+    width: 100%;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / span 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / span 1;
+    z-index: -1;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-left: 2em;
+  }
+  .exploration-content aside .rectangle {
+    height: 225px;
+  }
+}
+
 .aeronautics {
   width: 100%;
   margin: 10em 0;
@@ -469,7 +539,11 @@ header h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 5em 0;
+  max-width: 50%;
+  min-width: 550px;
+  margin: 5em 0 5em 5em;
+  padding: 5em;
+  justify-self: end;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -484,42 +558,52 @@ header h1 {
           box-shadow: 0 1em 3em rgba(0, 0, 0, 0.2);
 }
 
-.aeronautics .content .text {
-  width: 50%;
-  padding: 5em 0 5em 5em;
-  display: block;
-}
-
-.aeronautics .content .text h2 {
+.aeronautics .content h2 {
   position: relative;
-  font-weight: bold;
 }
 
-.aeronautics .content .text h2:before {
+.aeronautics .content h2:before {
   content: '01';
   opacity: 0.1;
   position: absolute;
-  font-size: 3em;
-  bottom: 0;
+  font-size: 2em;
+  top: -1em;
   left: -.5em;
   font-weight: inherit;
 }
 
-.aeronautics .content .text hr {
+.aeronautics .content hr {
   width: 15%;
   margin: 0px;
   border: darkslategrey 1px solid;
 }
 
-.aeronautics .content .text p {
+.aeronautics .content p {
   opacity: 0.3;
   margin: 2em 0;
 }
 
-.aeronautics .content .text a {
+.aeronautics .content a {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   padding: 1em;
+}
+
+@media screen and (max-width: 850px) {
+  .aeronautics .content {
+    margin: 5em 0 5em 2em;
+    padding: 3.5em;
+    max-width: 550px;
+    min-width: 0;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / span 3;
+  }
+  .aeronautics .image {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / span 3;
+  }
 }
 
 .mars-today {
@@ -564,8 +648,10 @@ header h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 50%;
+  max-width: 50%;
+  min-width: 550px;
   margin: 5em 0 -5em 5em;
+  padding: 5em;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -580,51 +666,62 @@ header h1 {
           box-shadow: 0 1em 3em rgba(0, 0, 0, 0.2);
 }
 
-.mars-today .content .text {
-  width: 100%;
-  padding: 5em;
-  display: block;
-}
-
-.mars-today .content .text h2 {
+.mars-today .content h2 {
   position: relative;
-  font-weight: bold;
 }
 
-.mars-today .content .text h2:before {
+.mars-today .content h2:before {
   content: '02';
   opacity: 0.1;
   position: absolute;
-  font-size: 3em;
-  bottom: 0;
+  font-size: 2em;
+  top: -1em;
   left: -.5em;
   font-weight: inherit;
 }
 
-.mars-today .content .text hr {
+.mars-today .content hr {
   width: 15%;
   margin: 0px;
   border: darkslategrey 1px solid;
 }
 
-.mars-today .content .text p {
+.mars-today .content p {
   opacity: 0.3;
   margin: 2em 0;
 }
 
-.mars-today .content .text a {
+.mars-today .content a {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   padding: 1em;
+}
+
+@media screen and (max-width: 850px) {
+  .mars-today .content {
+    margin: 5em 2em -5em 0em;
+    padding: 3.5em;
+    max-width: 550px;
+    min-width: 0;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / span 3;
+  }
+  .mars-today .image {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / span 3;
+  }
 }
 
 .solar-system {
   max-width: 100%;
   display: -ms-grid;
   display: grid;
-  padding: 0 0 0 5em;
-  -ms-grid-columns: 2fr 1fr;
-      grid-template-columns: 2fr 1fr;
+  margin-top: 10em;
+  padding-left: 5em;
+  -ms-grid-columns: 2fr 2fr;
+      grid-template-columns: 2fr 2fr;
   -ms-grid-rows: 1fr 3fr;
       grid-template-rows: 1fr 3fr;
   position: relative;
@@ -632,7 +729,7 @@ header h1 {
 
 .solar-system .image {
   width: 100%;
-  height: 40vw;
+  min-height: 40vw;
   background-image: url(https://source.unsplash.com/random/1400x600);
   background-size: cover;
   -ms-grid-column: 1;
@@ -659,13 +756,13 @@ header h1 {
   z-index: 1;
 }
 
-.solar-system .content {
+.solar-system .content-out {
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  padding: 5em 5em 0 0;
+  padding: 0 5em 1em 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -674,49 +771,50 @@ header h1 {
   -ms-grid-column-span: 1;
   grid-column: 2 / span 1;
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1 / span 2;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
 }
 
-.solar-system .content .text {
-  width: 100%;
-  display: block;
-}
-
-.solar-system .content .text > :not(h2) {
-  text-shadow: 0 0px 5px rgba(0, 0, 0, 0.3);
-}
-
-.solar-system .content .text h2 {
+.solar-system .content-out h2 {
   color: black;
   position: relative;
-  font-weight: bold;
 }
 
-.solar-system .content .text h2:before {
+.solar-system .content-out h2:before {
   content: '03';
   opacity: 0.1;
   position: absolute;
-  font-size: 3em;
-  bottom: 0;
+  font-size: 2em;
+  top: -1em;
   left: -.5em;
   font-weight: inherit;
 }
 
-.solar-system .content .text hr {
+.solar-system .content-out hr {
   width: 15%;
   margin: 0px;
   border: darkslategrey 1px solid;
 }
 
-.solar-system .content .text p {
-  opacity: 0.3;
-  margin: 2em 0;
+.solar-system .content-in {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / span 1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / span 1;
+  color: white;
+  padding: 1em 5em 0 0;
 }
 
-.solar-system .content .text a {
+.solar-system .content-in p {
+  opacity: 0.7;
+  margin: 0 0 2em;
+}
+
+.solar-system .content-in a {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   padding: 1em;
 }
 
@@ -728,6 +826,31 @@ header h1 {
   background-color: #171819;
   top: 50%;
   z-index: -2;
+}
+
+@media screen and (max-width: 850px) {
+  .solar-system {
+    padding-left: 2em;
+  }
+  .solar-system .content-out {
+    min-width: 0;
+    width: 75%;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    padding: 0 2em 1em 0;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+  }
+  .solar-system .content-in {
+    width: 75%;
+    -ms-grid-column-align: end;
+        justify-self: end;
+    padding: 1em 2em 0 0;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+  }
 }
 
 footer {
@@ -745,6 +868,7 @@ footer {
 
 footer nav {
   width: 50%;
+  min-width: 300px;
 }
 
 footer nav ul {

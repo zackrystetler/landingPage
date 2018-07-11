@@ -18,10 +18,17 @@ ul
 
 h1, h2
     font-family: 'Open Sans', sans-seriff
-    font-weight: 100
+    font-weight: 800
+    font-size: 3em
 
 p
     line-height: 1.4
+
+@media screen and (max-width: 800px)
+    body
+        font-size: 16px
+    h2
+        font-size: 2em
 
 header
     width: 100%
@@ -36,7 +43,8 @@ header
 
 .slider
     width: 100%
-    min-height: 90vh
+    height: 80vh
+    min-height: 600px
     display: flex
     position: relative
     justify-content: flex-end
@@ -67,7 +75,7 @@ header
         justify-content: center
         align-items: flex-end
         padding: 4em
-        opacity: 0.8
+        opacity: 0.7
 
         h2
             font-size: 5em
@@ -76,20 +84,28 @@ header
 
         a
             text-transform: uppercase
-            font-weight: bold
+            font-weight: 700
 
         .slide-counter
-            font-size: 5em
+            opacity: .5
+            font-size: 4em
             font-family: 'Open Sans', sans-seriff
             font-weight: 900
-            position: relative
-            margin: 2em .5em 0 0
+            position: absolute
+            bottom: .5em
+            right: 1em
 
             &:after
                 content: '/03'
                 font-size: .3em
                 position: absolute
                 top: .5em
+
+    @media screen and (max-width: 500px)
+        .content
+            h2
+                font-size: 3em
+
 
 .exploration-content
     display: flex
@@ -114,12 +130,12 @@ header
                 color: #aaa
             & a.active
                 color: black
-                font-weight: bold
+                font-weight: 700
                 position: relative
 
                 &:before
                     content: ''
-                    width: 250px
+                    width: 100vw
                     height: 3px
                     background-color: black
                     position: absolute
@@ -136,8 +152,6 @@ header
         padding: 5em 0 0 0
 
         h2
-            font-size: 4em
-            font-weight: normal
             margin: .25em 0
 
         h3
@@ -188,6 +202,35 @@ header
             font-size: .5em
             margin: 3em 0 0 0
 
+    @media screen and (max-width: 850px)
+        display: grid
+        grid-template-rows: auto auto
+        grid-template-columns: 100%
+
+        nav
+            width: 100%
+            height: 150px
+            padding: 1em
+            justify-content: flex-end
+            grid-row: 1 / span 1
+            grid-column: 1 / span 1
+            padding-right: 2em
+        .content
+            width: 100%
+            padding: 3em
+            grid-row: 2 / span 1
+            grid-column: 1 / span 1
+        aside
+            width: 100%
+            grid-row: 1 / span 1
+            grid-column: 1 / span 1
+            z-index: -1
+            align-items: flex-start
+            padding-left: 2em
+            
+            .rectangle
+                height: 225px
+
 .aeronautics
     width: 100%
     margin: 10em 0
@@ -219,44 +262,52 @@ header
         background-color: #171819
         color: white
         display: flex
-        margin: 5em 0
+        max-width: 50%
+        min-width: 550px
+        margin: 5em 0 5em 5em
+        padding: 5em
+        justify-self: end
         flex-direction: column
         grid-column: 2 / span 2
         grid-row: 1 / span 1
         box-shadow: 0 1em 3em rgba(0,0,0,0.2)
 
+        h2
+            position: relative
+
+            &:before
+                content: '01'
+                opacity: 0.1
+                position: absolute
+                font-size: 2em
+                top: -1em
+                left: -.5em
+                font-weight: inherit
+
+        hr
+            width: 15%
+            margin: 0px
+            border: darkslategrey 1px solid
+
+        p
+            opacity: 0.3
+            margin: 2em 0
+            
+        a
+            text-transform: uppercase
+            font-weight: 700
+            padding: 1em
+
+    @media screen and (max-width: 850px)
+        .content
+            margin: 5em 0 5em 2em
+            padding: 3.5em
+            max-width: 550px
+            min-width: 0
+            grid-column: 1 / span 3
         
-        .text
-            width: 50%
-            padding: 5em 0 5em 5em
-            display: block
-
-            h2
-                position: relative
-                font-weight: bold
-
-                &:before
-                    content: '01'
-                    opacity: 0.1
-                    position: absolute
-                    font-size: 3em
-                    bottom: 0
-                    left: -.5em
-                    font-weight: inherit
-
-            hr
-                width: 15%
-                margin: 0px
-                border: darkslategrey 1px solid
-
-            p
-                opacity: 0.3
-                margin: 2em 0
-                
-            a
-                text-transform: uppercase
-                font-weight: bold
-                padding: 1em
+        .image
+            grid-column: 1 / span 3
 
 .mars-today
     width: 100%
@@ -289,57 +340,64 @@ header
         background-color: #F8F9FA
         color: black
         display: flex
-        width: 50%
+        max-width: 50%
+        min-width: 550px
         margin: 5em 0 -5em 5em
+        padding: 5em
         flex-direction: column
         grid-column: 1 / span 2
         grid-row: 1 / span 1
         box-shadow: 0 1em 3em rgba(0,0,0,0.2)
 
+        h2
+            position: relative
+
+            &:before
+                content: '02'
+                opacity: 0.1
+                position: absolute
+                font-size: 2em
+                top: -1em
+                left: -.5em
+                font-weight: inherit
+
+        hr
+            width: 15%
+            margin: 0px
+            border: darkslategrey 1px solid
+
+        p
+            opacity: 0.3
+            margin: 2em 0
+            
+        a
+            text-transform: uppercase
+            font-weight: 700
+            padding: 1em
+
+    @media screen and (max-width: 850px)
+        .content
+            margin: 5em 2em -5em 0em
+            padding: 3.5em
+            max-width: 550px
+            min-width: 0
+            grid-column: 1 / span 3
         
-        .text
-            width: 100%
-            padding: 5em
-            display: block
-
-            h2
-                position: relative
-                font-weight: bold
-
-                &:before
-                    content: '02'
-                    opacity: 0.1
-                    position: absolute
-                    font-size: 3em
-                    bottom: 0
-                    left: -.5em
-                    font-weight: inherit
-
-            hr
-                width: 15%
-                margin: 0px
-                border: darkslategrey 1px solid
-
-            p
-                opacity: 0.3
-                margin: 2em 0
-                
-            a
-                text-transform: uppercase
-                font-weight: bold
-                padding: 1em
+        .image
+            grid-column: 1 / span 3
 
 .solar-system
     max-width: 100%
     display: grid
-    padding: 0 0 0 5em
-    grid-template-columns: 2fr 1fr
+    margin-top: 10em
+    padding-left: 5em
+    grid-template-columns: 2fr 2fr
     grid-template-rows: 1fr 3fr
     position: relative
 
     .image
         width: 100%
-        height: 40vw
+        min-height: 40vw
         background-image: url(https://source.unsplash.com/random/1400x600)
         background-size: cover
         grid-column: 1 / span 2
@@ -360,50 +418,47 @@ header
             opacity: 0.5
             z-index: 1
     
-    .content
+    .content-out
         color: white
         display: flex
         width: 100%
-        padding: 5em 5em 0 0
+        padding: 0 5em 1em 0
         flex-direction: column
         grid-column: 2 / span 1
-        grid-row: 1 / span 2
+        grid-row: 1 / span 1
 
-        
-        .text
-            width: 100%
-            display: block
+        h2
+            color: black
+            position: relative
 
-            &>:not(h2)
-                text-shadow: 0 0px 5px rgba(0,0,0,0.3)
+            &:before
+                content: '03'
+                opacity: 0.1
+                position: absolute
+                font-size: 2em
+                top: -1em
+                left: -.5em
+                font-weight: inherit
 
-            h2
-                color: black
-                position: relative
-                font-weight: bold
+        hr
+            width: 15%
+            margin: 0px
+            border: darkslategrey 1px solid
 
-                &:before
-                    content: '03'
-                    opacity: 0.1
-                    position: absolute
-                    font-size: 3em
-                    bottom: 0
-                    left: -.5em
-                    font-weight: inherit
+    .content-in
+        grid-column: 2 / span 1
+        grid-row: 2 / span 1
+        color: white
+        padding: 1em 5em 0 0
 
-            hr
-                width: 15%
-                margin: 0px
-                border: darkslategrey 1px solid
-
-            p
-                opacity: 0.3
-                margin: 2em 0
-                
-            a
-                text-transform: uppercase
-                font-weight: bold
-                padding: 1em
+        p
+            opacity: 0.7
+            margin: 0 0 2em
+            
+        a
+            text-transform: uppercase
+            font-weight: 700
+            padding: 1em
 
     &:after
         content: ''
@@ -414,6 +469,22 @@ header
         top: 50%
         z-index: -2
 
+
+    @media screen and (max-width: 850px)
+        padding-left: 2em
+
+        .content-out
+            min-width: 0
+            width: 75%
+            justify-self: end
+            padding: 0 2em 1em 0
+            grid-column: 1 / span 2
+        .content-in
+            width: 75%
+            justify-self: end
+            padding: 1em 2em 0 0
+            grid-column: 1 / span 2
+            
 footer
     width: 100%
     color: white
@@ -424,6 +495,7 @@ footer
     
     nav
         width: 50%
+        min-width: 300px
 
         ul
             width: 100%
@@ -433,4 +505,3 @@ footer
 
             a
                 opacity: 0.5
-
