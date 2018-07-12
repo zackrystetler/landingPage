@@ -1,3 +1,5 @@
+$( document ).ready( function() {
+
 
 
 //slider logic for full width slider with structure #slider > .slides > #slide, #slide...
@@ -74,3 +76,6 @@ slide('#slider', '100vw', 1500, 4000);
 glide('.content.glide', 0.5);
 glide('.image.glide', -0.3);
 glide('aside.glide', -0.4);
+
+
+})
