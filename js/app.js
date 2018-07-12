@@ -22,17 +22,12 @@ const slide = (slider, width, animSpeed, pause) => {
             });
         }, pause);
     }
-
     function pauseSlider() {
         clearInterval(interval);
     }
-
     $slider.on('mouseenter', pauseSlider).on('mouseleave', startSlider);
     startSlider();
 }
-
-slide('#slider', '100vw', 750, 2000);
-
 
 //parallax effect on element, typical speed between 0 and 1
 const glide = (elem, speed) => {
@@ -52,8 +47,30 @@ const glide = (elem, speed) => {
     });
 }
 
+const $links = $('.exploration-content nav a');
+$links.each(function(i) {
+    $(this).on('click', function() {
+        event.preventDefault();
+        if ($(this).hasClass('active')) {
+            return
+        } else {
+            const contentId = this.hash;
+            const $section = $('.exploration-content');
+            const $activeLink = $section.find('nav a.active');
+            const $activeSection = $section.find('.content .active');
+            const $newSection = $section.find(contentId);
+
+            $activeLink.removeClass('active');
+            $(this).addClass('active');
+
+            $activeSection.fadeOut().removeClass('active');
+            $newSection.addClass('active').fadeIn(1000);
+        }
+    })
+})
+
+slide('#slider', '100vw', 1500, 4000);
+
 glide('.content.glide', 0.5);
 glide('.image.glide', -0.3);
 glide('aside.glide', -0.4);
-
-//fade-in effects

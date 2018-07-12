@@ -131,11 +131,14 @@ header
     display: flex
     flex-direction: row
     justify-content: space-between
+    align-items: flex-start
     width: 100%
-    overflow: visible
+    height: 600px
+    overflow: hidden
 
     nav
         width: 350px
+        height: 100%
         order: -1
         display: flex
         justify-content: center
@@ -147,34 +150,46 @@ header
 
             a
                 opacity: 0.2
+                position: relative
+
+                &:before
+                        content: ''
+                        width: 1px
+                        height: 3px
+                        background-color: black
+                        position: absolute
+                        right: 120%
+                        top: 4px
+                        transform: translate(-100vw, 6px)
+                        transition-duration: 0.3s
 
                 &:hover
                     opacity: 0.7
             
                 &.active
                     opacity: 1
-                    position: relative
 
                     &:before
-                        content: ''
                         width: 100vw
-                        height: 3px
-                        background-color: black
-                        position: absolute
-                        right: 110%
-                        top: 4px
-                        transform: translateY(5px)
+                        transform: translate(0, 6px)
+
+                    
                     
     .content
-        width: 50%
         display: flex
+        width: 50%
         flex-direction: column
         justify-content: center
         align-items: flex-start
         padding: 5em 0 0 0
 
+        & div:not(.active)
+            display: none
+
         h2
             margin: .25em 0
+            transition-duration: 0.5s
+
 
         h3
             font-weight: bold
@@ -183,6 +198,7 @@ header
             opacity: 0.6
     aside
         width: 400px
+        height: 100%
         display: flex
         flex-direction: column
         justify-content: flex-end
@@ -251,7 +267,7 @@ header
             padding-left: 2em
             
             .rectangle
-                height: 225px
+                height: 250px
 
 .aeronautics
     width: 100%

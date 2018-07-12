@@ -343,12 +343,17 @@ header h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   width: 100%;
-  overflow: visible;
+  height: 600px;
+  overflow: hidden;
 }
 
 .exploration-content nav {
   width: 350px;
+  height: 100%;
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
@@ -370,6 +375,21 @@ header h1 {
 
 .exploration-content nav ul li a {
   opacity: 0.2;
+  position: relative;
+}
+
+.exploration-content nav ul li a:before {
+  content: '';
+  width: 1px;
+  height: 3px;
+  background-color: black;
+  position: absolute;
+  right: 120%;
+  top: 4px;
+  -webkit-transform: translate(-100vw, 6px);
+          transform: translate(-100vw, 6px);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .exploration-content nav ul li a:hover {
@@ -378,26 +398,19 @@ header h1 {
 
 .exploration-content nav ul li a.active {
   opacity: 1;
-  position: relative;
 }
 
 .exploration-content nav ul li a.active:before {
-  content: '';
   width: 100vw;
-  height: 3px;
-  background-color: black;
-  position: absolute;
-  right: 110%;
-  top: 4px;
-  -webkit-transform: translateY(5px);
-          transform: translateY(5px);
+  -webkit-transform: translate(0, 6px);
+          transform: translate(0, 6px);
 }
 
 .exploration-content .content {
-  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 50%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -411,8 +424,14 @@ header h1 {
   padding: 5em 0 0 0;
 }
 
+.exploration-content .content div:not(.active) {
+  display: none;
+}
+
 .exploration-content .content h2 {
   margin: .25em 0;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .exploration-content .content h3 {
@@ -425,6 +444,7 @@ header h1 {
 
 .exploration-content aside {
   width: 400px;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -528,7 +548,7 @@ header h1 {
     padding-left: 2em;
   }
   .exploration-content aside .rectangle {
-    height: 225px;
+    height: 250px;
   }
 }
 
