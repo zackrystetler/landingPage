@@ -215,10 +215,30 @@ header h1 {
   opacity: 0.6;
 }
 
-.slider {
+#slider {
   width: 100%;
   height: 80vh;
   min-height: 600px;
+  overflow: hidden;
+}
+
+#slider .slides {
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#slider .slides #slide {
+  width: 100vw;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,7 +255,7 @@ header h1 {
   z-index: 1;
 }
 
-.slider:before {
+#slider .slides #slide:before {
   z-index: -1;
   content: '';
   position: absolute;
@@ -247,7 +267,7 @@ header h1 {
   z-index: 1;
 }
 
-.slider .content {
+#slider .slides #slide .content {
   z-index: 1;
   width: 475px;
   height: 100%;
@@ -270,13 +290,13 @@ header h1 {
   opacity: 0.8;
 }
 
-.slider .content h2 {
+#slider .slides #slide .content h2 {
   font-size: 5em;
   text-transform: uppercase;
   margin: 0;
 }
 
-.slider .content a {
+#slider .slides #slide .content a {
   text-transform: uppercase;
   font-weight: 700;
   border: solid 1px white;
@@ -284,12 +304,12 @@ header h1 {
   padding: 0.5em;
 }
 
-.slider .content a:hover {
+#slider .slides #slide .content a:hover {
   background-color: white;
   color: black;
 }
 
-.slider .content .slide-counter {
+#slider .slides #slide .content .slide-counter {
   opacity: .5;
   font-size: 4em;
   font-family: 'Open Sans', sans-seriff;
@@ -299,7 +319,7 @@ header h1 {
   right: 1em;
 }
 
-.slider .content .slide-counter:after {
+#slider .slides #slide .content .slide-counter:after {
   content: '/03';
   font-size: .3em;
   position: absolute;
@@ -307,7 +327,7 @@ header h1 {
 }
 
 @media screen and (max-width: 500px) {
-  .slider .content h2 {
+  #slider .slides #slide .content h2 {
     font-size: 3em;
   }
 }

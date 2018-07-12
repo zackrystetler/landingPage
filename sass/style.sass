@@ -43,77 +43,88 @@ header
     h1
         opacity: 0.6
 
-.slider
+#slider
     width: 100%
     height: 80vh
     min-height: 600px
-    display: flex
-    position: relative
-    justify-content: flex-end
-    align-items: center
-    background-color: lightgrey
-    background-image: url(https://source.unsplash.com/random/1450x850)
-    background-size: cover
-    z-index: 1
-    &:before
-        z-index: -1
-        content: ''
-        position: absolute
-        top: 0
-        width: 100%
-        height: 100%
-        background-color: darkslategrey
-        opacity: 0.5
-        z-index: 1
+    overflow: hidden
 
-    .content
-        z-index: 1
-        width: 475px
+    .slides
         height: 100%
-        text-align: right
-        color: white
+        width: fit-content
         display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: flex-end
-        padding: 4em
-        opacity: 0.8
-
-        h2
-            font-size: 5em
-            text-transform: uppercase
-            margin: 0
-
-        a
-            text-transform: uppercase
-            font-weight: 700
-            border: solid 1px white
-            border-radius: 2px
-            padding: 0.5em
-
-            &:hover
-                background-color: white
-                color: black
-
-        .slide-counter
-            opacity: .5
-            font-size: 4em
-            font-family: 'Open Sans', sans-seriff
-            font-weight: 900
-            position: absolute
-            bottom: .5em
-            right: 1em
-
-            &:after
-                content: '/03'
-                font-size: .3em
+        flex-direction: row
+        
+        #slide
+            width: 100vw
+            height: 100%
+            display: flex
+            position: relative
+            justify-content: flex-end
+            align-items: center
+            background-color: lightgrey
+            background-image: url(https://source.unsplash.com/random/1450x850)
+            background-size: cover
+            z-index: 1
+            &:before
+                z-index: -1
+                content: ''
                 position: absolute
-                top: .5em
+                top: 0
+                width: 100%
+                height: 100%
+                background-color: darkslategrey
+                opacity: 0.5
+                z-index: 1
 
-    @media screen and (max-width: 500px)
-        .content
-            h2
-                font-size: 3em
+            .content
+                z-index: 1
+                width: 475px
+                height: 100%
+                text-align: right
+                color: white
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: flex-end
+                padding: 4em
+                opacity: 0.8
+
+                h2
+                    font-size: 5em
+                    text-transform: uppercase
+                    margin: 0
+
+                a
+                    text-transform: uppercase
+                    font-weight: 700
+                    border: solid 1px white
+                    border-radius: 2px
+                    padding: 0.5em
+
+                    &:hover
+                        background-color: white
+                        color: black
+
+                .slide-counter
+                    opacity: .5
+                    font-size: 4em
+                    font-family: 'Open Sans', sans-seriff
+                    font-weight: 900
+                    position: absolute
+                    bottom: .5em
+                    right: 1em
+
+                    &:after
+                        content: '/03'
+                        font-size: .3em
+                        position: absolute
+                        top: .5em
+
+            @media screen and (max-width: 500px)
+                .content
+                    h2
+                        font-size: 3em
 
 
 .exploration-content
