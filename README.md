@@ -10,6 +10,8 @@ http://htmlpreview.github.io/?https://github.com/zackrystetler/landingPage/blob/
 
 ## Authors
 
-* **Outcrowd** - *Design Inspiration* - [dribbble.com/outcrowd] (https://dribbble.com/shots/4793767-Nasa-Landing-Page)
+* **Unsplash/NASA** - *Photo Credit* - [unsplash.com/@nasa](https://unsplash.com/@nasa)
+
+* **Outcrowd** - *Design Inspiration* - [dribbble.com/outcrowd](https://dribbble.com/shots/4793767-Nasa-Landing-Page)
 
 * **Zackry Stetler** - *Dev work* - [zackrystetler.com](https://www.zackrystetler.com/)
